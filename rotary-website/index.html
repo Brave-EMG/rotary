@@ -37,13 +37,9 @@
             position: relative;
         }
 
-        .rotary-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><defs><style>.cls-1{fill:%23f7931e;}.cls-2{fill:%23ffffff;}</style></defs><circle class="cls-1" cx="400" cy="400" r="380"/><g class="cls-2"><path d="M400,50 L430,100 L490,100 L460,150 L480,220 L400,180 L320,220 L340,150 L310,100 L370,100 Z"/><path d="M400,750 L430,700 L490,700 L460,650 L480,580 L400,620 L320,580 L340,650 L310,700 L370,700 Z"/><path d="M50,400 L100,370 L100,310 L150,340 L220,320 L180,400 L220,480 L150,460 L100,490 L100,430 Z"/><path d="M750,400 L700,370 L700,310 L650,340 L580,320 L620,400 L580,480 L650,460 L700,490 L700,430 Z"/><path d="M170,170 L230,230 L170,290 L110,230 Z"/><path d="M630,170 L690,230 L630,290 L570,230 Z"/><path d="M170,630 L230,570 L170,510 L110,570 Z"/><path d="M630,630 L690,570 L630,510 L570,570 Z"/></g><g class="cls-2"><path d="M250,250 L550,250 L550,350 L450,350 L450,400 L550,400 L550,450 L450,450 L450,550 L250,550 L250,450 L350,450 L350,400 L250,400 L250,350 L350,350 L350,250 Z M350,350 L350,400 L450,400 L450,350 Z"/></g><circle class="cls-1" cx="400" cy="400" r="80"/><circle class="cls-2" cx="400" cy="400" r="60"/><text x="400" y="420" font-family="Arial,sans-serif" font-size="50" font-weight="bold" fill="%23f7931e" text-anchor="middle">R</text><text x="400" y="120" font-family="Arial,sans-serif" font-size="60" font-weight="bold" fill="%23f7931e" text-anchor="middle">ROTARY</text><text x="400" y="720" font-family="Arial,sans-serif" font-size="50" font-weight="bold" fill="%23f7931e" text-anchor="middle">INTERNATIONAL</text></svg>') no-repeat center;
-            background-size: contain;
-        }
+        
+
+        
 
         .header h1 {
             font-size: 2.2em;
@@ -211,6 +207,8 @@
             margin-bottom: 5px;
         }
 
+        /* Instructions spéciales - Supprimé */
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -253,7 +251,7 @@
     <div class="container">
         <!-- Header avec identité Rotary -->
         <header class="header">
-            <div class="rotary-logo"></div>
+            
             <h1>Documents Officiels</h1>
             <div class="club-name">Rotary Club Cotonou Rive Gauche</div>
             <div class="mandate-info">Mandat 2025-2026 - Président Franck ACCROMBESSY</div>
@@ -266,9 +264,11 @@
                 <p>Découvrez le programme complet des activités planifiées pour le mandat 2025-2026, organisées autour de notre vision : "Être un club ancré sur des valeurs élevées, qui attire, qui bénéficie de la confiance des partenaires et de la communauté et qui inspire".</p>
             </div>
 
+
+
             <div class="files-grid">
                 <!-- Document 1 : Programme d'activités -->
-                <div class="file-card" onclick="downloadFile('./documents/PROGRAMME_MANDAT_2025_2026.pdf')">
+                <div class="file-card" onclick="downloadFile('LIEN_PROGRAMME_ACTIVITES_ICI')">
                     <div class="file-header">
                         <div class="file-icon pdf-icon">📄</div>
                         <div class="file-info">
@@ -283,7 +283,7 @@
                 </div>
 
                 <!-- Document 2 : Calendrier -->
-                <div class="file-card" onclick="downloadFile('./documents/Calendrier_Activites_Premier_Semestre.pdf')">
+                <div class="file-card" onclick="downloadFile('LIEN_CALENDRIER_ICI')">
                     <div class="file-header">
                         <div class="file-icon pdf-icon">📄</div>
                         <div class="file-info">
@@ -298,7 +298,7 @@
                 </div>
 
                 <!-- Vidéo de présentation -->
-                <div class="file-card" onclick="downloadFile('./documents/PROG_MANDAT_180725.mp4')">
+                <div class="file-card" onclick="downloadFile('LIEN_VIDEO_ICI')">
                     <div class="file-header">
                         <div class="file-icon video-icon">🎥</div>
                         <div class="file-info">
@@ -327,6 +327,11 @@
 
     <script>
         function downloadFile(url) {
+            if (url.includes('LIEN_') && url.includes('_ICI')) {
+                alert('⚠️ Administration requise !\n\nVeuillez configurer les liens de téléchargement :\n1. Uploadez vos fichiers sur Google Drive ou WeTransfer\n2. Obtenez les liens de téléchargement\n3. Remplacez les URLs dans le code source');
+                return;
+            }
+            
             // Ouvre le lien de téléchargement
             window.open(url, '_blank');
         }
